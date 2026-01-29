@@ -1,0 +1,11 @@
+1. Class and Object (Example)
+2. Class has data/attributes and func/method in it.
+    > Code walkthrough
+    > attribute get called itself, methods as called manually.
+3. Why Python is called objext oreinted program?
+4. Advanatges of OOPS:
+    > You can create own data type
+    > code reusability'
+    > debugging
+    > easy to colab
+    
