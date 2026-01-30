@@ -1,6 +1,6 @@
-lst = [1,2,3]
-my_str = 'My family'
-my_int = 5000
+#lst = [1,2,3]
+#my_str = 'My family'
+#my_int = 5000
 
 #print(type(lst))
 # lst.capitalize()
@@ -8,6 +8,10 @@ my_int = 5000
 
 # print(lst
 
-a = 'x'
-b = 'y'
-print(a+b)
+#a = 'x'
+#b = 'y'
+#print(a+b)
+
+from oops_proj import chatbook
+
+user1 = chatbook()
