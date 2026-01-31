@@ -1,72 +1,95 @@
 class chatbook:
+
+    __user_id = 1
+
     def __init__(self):
+        self.id = chatbook.__user_id
+        chatbook.__user_id += 1
+        self.__name = "Default User"
         self.username = ''
         self.password = ''
         self.loggedin = False
-        self.menu()
+        # self.menu()
+
+    @staticmethod
+    def get_id():
+        return chatbook.__user_id
+    
+    @staticmethod
+    def set_id(val):
+        chatbook.__user_id = val
+
+
+    def get_name(self):
+        return self.__name
+    
+
+    def set_name(self, value):
+        self.__name = value
 
 
     def menu(self):
-        user_input = input("""Welcome to chatbook, How would you like to proceed?
-                           1. Press 1 to Signup
-                           2. Press 2 to Singin
-                           3. Press 3 to Write a post
-                           4. Press 4 to Message a friend
-                           5. Press anyother key to exit----------""")
-        
-        if user_input == '1':
-            self.Signup()
-        elif user_input == '2':
-            self.Signin()
-        elif user_input == '3':
+        user_input = input(""""Welcome to Chatbook !! How would you like to proceed?
+                           1. Press 1 to signup
+                           2. Press 2 to signin
+                           3. Press 3 to write a post
+                           4. Press 4 to message a friend
+                           5. Press any other key to exit
+                           
+                           -> """)
+        if user_input == "1":
+            self.signup()
+        elif user_input == "2":
+            self.signin()
+        elif user_input == "3":
             self.my_post()
-        elif user_input == '4':
-            self.my_message()
+        elif user_input == "4":
+            self.sendmsg()
         else:
             exit()
 
 
-    def Signup(self):
-        email = input('Enter your email id')
-        password = input('Enter your password')
+    def signup(self):
+        email = input("enter your email here -> ")
+        pwd = input("setup your password here -> ")
         self.username = email
-        self.password = password
-        print('You have signedup successfuly')
-        print('\n')
+        self.password = pwd
+        print("You have signed up successfully !!")
+        print("\n")
         self.menu()
 
-    def Signin(self):
-        if self.username == "" and self.password == "":
-            print('First signup by selecting 1 option in the meain menu')
+    def signin(self):
+        if self.username=='' and self.password=='':
+            print("Please signup first by pressing 1 in the main menu")
         else:
-            username = input('Enter your email id/usename')
-            password = input('Enter your password')
-            if self.username == username and self.password == password:
-                print('You have logged in successfuly')
+            uname = input("enter your email/username here -> ")
+            pwd = input("ENter your password here -> ")
+            if self.username==uname and self.password==pwd:
+                print("You have signed in successfully !!")
                 self.loggedin = True
             else:
-                print('Kindly input correct credentials....')
-        print('\n')
+                print("Please input correct credentials..")
+        print("\n")
         self.menu()
-
 
     def my_post(self):
-        if self.loggedin == True:
-            post = input('Enter your Message here')
-            print(f'Your Message have been posted {post}')
+        if self.loggedin==True:
+            txt = input("Enter your message here -> ")
+            print(f"Following content has been posted -> {txt}")
         else:
-            print('You need to signin first to post something')
-        print('\n')
+            print("You need to signin first to post something...")
+        print("\n")
         self.menu()
 
-    def my_message(self):
-        if self.loggedin == True:
-            msg = input('Enter your message')
-            friend = input('Whom to send the message?')
-            print(f'Your message have been delivered to your friend {friend}')
+    def sendmsg(self):
+        if self.loggedin==True:
+            txt = input("Enter your message here -> ")
+            frnd = input("Whom to send the msg? -> ")
+            print(f"Your message has been sent to {frnd}")
         else:
-            print('You need to signin first to send a message to anyone')
-        print('\n')
+            print("You need to signin first to post something...")
+        print("\n")
         self.menu()
 
-#user1 = chatbook()
+
+# user1 = chatbook()

@@ -9,6 +9,17 @@
     > debugging
     > easy to colab
 5. End to end project (chatbook)
+    > Function VS methods
+    > magic method and dunder method
+    > Self
+    > You can create attribute outside Class
     > encapsulation
     > getter and setter
     > static method
+6. Inheritance
+    > Inheritance code Example
+    > Why Inheritance is needed? (code reusability, parent has no access to child class)
+    > what gets inherited? - constructor, non private attributes, non private methods
+    > constructor overloading and method overloading
+    > Super keyword(can be used only inside class, can not access variables/attributes, used only inside child class)
+    > Types of Inheritance: 1. Single Ingeritance, 2. Multilevel, 3. Heirarchical, 4. Multiple <diamond problem>, 5. Hybrid
